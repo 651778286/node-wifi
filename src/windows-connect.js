@@ -4,6 +4,7 @@ const env = require('./env');
 const scan = require('./windows-scan');
 const path = require('path');
 const os = require('os');
+const hex = require('string-hex')
 const profileFilename = path.join(os.tmpdir(), 'nodeWifiConnect.xml');
 
 function execCommand(cmd, params) {
@@ -96,7 +97,7 @@ function getHexSsid(plainTextSsid) {
 function win32WirelessProfileBuilder(selectedAp, key) {
   let profile_content = `<?xml version="1.0"?> <WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1"> <name>${
     selectedAp.ssid
-  }</name> <SSIDConfig> <SSID> <hex>${getHexSsid(
+  }</name> <SSIDConfig> <SSID> <hex>${hex(
     selectedAp.ssid
   )}</hex> <name>${selectedAp.ssid}</name> </SSID> </SSIDConfig>`;
 

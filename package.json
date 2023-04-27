@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "command-line-args": "^5.2.0",
-    "command-line-usage": "^6.1.1"
+    "command-line-usage": "^6.1.1",
+    "string-hex": "^1.0.0"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
